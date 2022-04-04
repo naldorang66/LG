@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/SampleNoticeBoard_v0.9/Login.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>LG Academy 실습 Login</title>
+    <link rel="stylesheet" href="./Login_files/bootstrap.css">
+	<link rel="stylesheet" href="./Login_files/login.css">
+</head>
+<body>
+
+<div class="container login-container">
+            <div class="row">
+
+  <!--  <p class="align-content-center">
+    </p>
+	
+	<p align="center">
+		<input class="fadeIn second" name="login" id="userId" type="text" placeholder="아이디"></input>
+    </p>
+	<p align="center">
+		<input class="fadeIn second" name="login" id="password" type="password" placeholder="비밀번호"></input>
+    </p>
+    <p align="center">
+		<a class="btn btn-info">로그인</a>
+    </p> -->
+    <div class="col-md-6 login-form-2" align="center">
+		<h3>LG Academy 실습</h3>
+		<form>
+			<div class="form-group">
+				<input id="id" type="text" class="form-control" placeholder="Your ID" value="" autofocus="">
+			</div>
+			<div class="form-group">
+				<input id="pw" type="password" class="form-control" placeholder="Your Password *" value="" onkeydown="javascript:onKeyDown();">
+			</div>
+			<div class="form-group">
+				<input type="button" onclick="javascript:login();" class="btnSubmit" value="Login">
+			</div>
+			<div class="form-group">
+
+				<a href="file:///C:/SampleNoticeBoard_v0.9/Login.html#" class="ForgetPwd" name="ForgetPwd" value="Login">LG Academy</a>
+				<span id="login-message"></span>
+			</div>
+		</form>
+	</div>
+	</div>
+</div>
+
+<script src="./Login_files/jquery-3.4.1.js.다운로드"></script>
+<script type="text/javascript" src="./Login_files/bootstrap.js.다운로드"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id").val("");
+		$("#pw").val("");
+		$("a[name=ForgetPwd]").html("LG Academy");
+});
+
+function login(){
+
+	var id = $("#id").val();
+	var pw = $("#pw").val();
+	
+	var id = $("#id").val();
+	var pw = $("#pw").val();
+	
+	if(id=="admin" & pw=="1234")
+	{
+		console.log("admin login");
+		window.location.href = "index.html?1";
+	}
+	else if(id=="user" & pw=="4321")
+	{
+	    console.log("user login without loading");
+		window.location.href = "index.html?4";
+	}
+	else if(id=="user" & pw=="5678")
+	{
+		 console.log("user login with loading");	
+		 window.location.href = "loading.html";
+	}
+	else{
+		console.log("login Failed");
+		$("#id").val("");
+		$("#pw").val("");
+		$("a[name=ForgetPwd]").html("아이디 혹은 비밀번호가 맞지 않습니다.");
+	}
+}
+
+function onKeyDown(){
+	 if(event.keyCode == 13)
+     {
+		login();
+          //TODO : 실행시킬 코드
+	}
+}
+</script>
+
+</body></html>
